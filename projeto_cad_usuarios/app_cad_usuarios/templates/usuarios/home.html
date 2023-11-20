@@ -11,15 +11,26 @@
     <title>Padaria</title>
   </head>
   <body>
-    <nav style="background-color"navbar navbar-light bg-light">
+    <nav style="background-color: #f58f23 "navbar navbar-light bg-light">
         <div class="container-fluid">
           {% load static %}
           <img src="{% static '../static/images/apadaria.jpg' %}" alt="My image">
         
         </div>
       </nav>
-    <h1>Padaria</h1>
+    <form action="{% url 'listagem_usuarios'%}" method="post">
+      {% csrf_token %}
+      <Div style="text-align: center;" class="container">
+        <h1>Cadastro de Clientes</h1>
+        Nome <input name="Nome" class="form-control-sm" type="text">
+        Pedido <input name="Pedido" class="form-control-sm" type="text">
+        <button class="form-control-sm">Enviar</button>
+      </Div>
+    </form>
+    
    
+  
+
 
     
 
