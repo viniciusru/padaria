@@ -8,13 +8,13 @@ def home(request):
 
 def usuarios(requets):
     # Salvar dados no banco de dados
-    novo_usuario = usuarios()
-    novo_usuario.nomo = requets.POST.get('nome')
-    novo_usuario.pedidos = requets.POST.get('pedidos')
+    novo_usuario = Usuarios()
+    novo_usuario.Nome = requets.POST.get('nome')
+    novo_usuario.idade = requets.POST.get('pedidos')
     novo_usuario.save()
     
     usuarios = {
-        'usuarios':usuarios.objects.all()
+        'usuarios':Usuarios.objects.all()
         }
-    return render(requets, 'usuarios/pedidos.html', usuarios)
+    return render(requets, 'usuarios/pedidos.html', Usuarios)
     
